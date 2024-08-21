@@ -23,7 +23,7 @@ I then added `.github/actions/workflows/sast.yml` to scan the repository on a pu
 
 I then merged this PR to see the results on the master branch. 
 
-Of course I forgot to force 'squash merging' so the commit history on master is somewhat polluted, but I hope you will forgive me.
+Of course I forgot to force 'squash merging' so the commit history on master is somewhat polluted, but I hope you will forgive me. In the real world, I use squash commit and use my PR title as the commit message.
 
 See scanning results here: https://github.com/xanderhades/railsgoat/security/code-scanning
 

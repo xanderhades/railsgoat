@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request: # temporarily run on PR as well
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -20,12 +19,6 @@ jobs:
           target: http://localhost:3000
           fail_action: false
           allow_issue_writing: false
-      - name: save artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: owasp-zap-report
-          path: zap_scan
       - name: Create sarif file from zaproxy results
         uses: SvanBoxel/zaproxy-to-ghas@main
       - name: Upload SARIF file
