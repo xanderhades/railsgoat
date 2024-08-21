@@ -1,6 +1,8 @@
 # Vulnerability Discovery Techniques
+My approach is documented here, and in the various commits in this PR: https://github.com/xanderhades/railsgoat/pull/1
+
 ## tools used
-brakeman
+brakeman, Burp Suite
 
 I use [mise](https://github.com/jdx/mise) to manage my local dev environment
 
@@ -16,6 +18,8 @@ Run brakeman locally and save to a file
 `brakeman --color -o /dev/stdout -o brakeman/output.json -o brakeman/report.html`
 
 I can then analyze the results from stdout, from brakeman/output.json or from a nicer brakeman/report.html file in a web browser
+
+I then added `.github/actions/workflows/sast.yml` to scan the repository on a pull request, and upload the results to github itself, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman
 
 ## setup railsgoat
 Read `README.md` for instructions to run railsgoat locally. I'll go with the provided docker compose stack.
