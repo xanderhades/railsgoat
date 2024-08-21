@@ -14,7 +14,7 @@ jobs:
         run: make init
       - name: compose start
         run: make start
-      - name: zpa scan
+      - name: zap scan
         uses: zaproxy/action-baseline@master
         with:
           target: http://localhost:3000
