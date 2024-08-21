@@ -2,6 +2,9 @@ name: 'brakeman sast scan'
 on:
   workflow_dispatch:
   pull_request:
+  push:
+    branches:
+      - master
 jobs:
   scan:
     runs-on: ubuntu-latest

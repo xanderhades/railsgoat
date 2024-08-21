@@ -1,0 +1,27 @@
+name: 'owasp zap dast scan'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: build
+        run: make init
+      - name: compose start
+        run: make start
+      - name: zap scan
+        uses: zaproxy/action-baseline@master
+        with:
+          target: http://localhost:3000
+          fail_action: false
+          allow_issue_writing: false
+      - name: Create sarif file from zaproxy results
+        uses: SvanBoxel/zaproxy-to-ghas@main
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: results.sarif
