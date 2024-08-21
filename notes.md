@@ -2,7 +2,7 @@
 My approach is documented here, and in the various commits in these pull requests: https://github.com/xanderhades/railsgoat/pulls?q=is%3Apr
 
 ## tools used
-brakeman, Burp Suite
+brakeman, OWASP Zap, Burp Suite
 
 I use [mise](https://github.com/jdx/mise) to manage my local dev environment
 
@@ -19,7 +19,7 @@ Run brakeman locally and save to a file
 
 I can then analyze the results from stdout, from brakeman/output.json or from a nicer brakeman/report.html file in a web browser
 
-I then added `.github/actions/workflows/sast.yml` to scan the repository on a pull request, and upload the results to github itself, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman
+I then added `.github/actions/workflows/sast.yml` to scan the repository on a pull request and on a merge to master, and upload the results to github itself, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman
 
 I then merged this PR to see the results on the master branch. 
 
@@ -28,6 +28,8 @@ Of course I forgot to force 'squash merging' so the commit history on master is 
 See scanning results here: https://github.com/xanderhades/railsgoat/security/code-scanning
 
 ## vulnerability discovery - DAST
+
+I added `.github/actions/workflows/daast.yml` to scan the repository with OWASP Zap on a merge to master.
 
 
 ### additional notes
