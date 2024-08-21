@@ -19,7 +19,7 @@ Run brakeman locally and save to a file
 
 I can then analyze the results from stdout, from brakeman/output.json or from a nicer brakeman/report.html file in a web browser
 
-I then added `.github/actions/workflows/sast.yml` to scan the repository on a pull request and on a merge to master, and upload the results to github itself, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman
+I then added `.github/actions/workflows/sast.yml` to scan the repository on a pull request and on a merge to master, and upload the results to GitHub, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman
 
 I then merged this PR to see the results on the master branch. 
 
@@ -29,11 +29,7 @@ See scanning results here: https://github.com/xanderhades/railsgoat/security/cod
 
 ## vulnerability discovery - DAST
 
-I added `.github/actions/workflows/daast.yml` to scan the repository with OWASP Zap on a merge to master.
-
-
-### additional notes
-In the real world, I might tune brakeman and zap so only findings with a high degree of confidence are reported. I might also just leave it as-is, and dismiss false positive issues found in https://github.com/xanderhades/railsgoat/security using the 'dismiss alert' feature. I might voluntarily fail a build if some new findings are found, but only if I have a high degree of confidence that false positives won't disrupt the dev workflow. The current settings were kept simple for this exercise.
+I added `.github/actions/workflows/daast.yml` to scan the repository with OWASP Zap on a merge to master and upload the results to GitHub, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman%2CZAProxy
 
 ## setup railsgoat
 Read `README.md` for instructions to run railsgoat locally. I'll go with the provided docker compose stack.
@@ -44,9 +40,12 @@ Read `README.md` for instructions to run railsgoat locally. I'll go with the pro
 docker compose build
 docker compose run web rails db:setup
 docker compose up
-````
+```
 
 I created a `Makefile` to simplify usage.
 
 `make init && make start`
 railsgoat is then available at http://localhost:3000
+
+### additional notes
+In the real world, I might tune brakeman and zap so only findings with a high degree of confidence are reported. I might also just leave it as-is, and dismiss false positive issues found in https://github.com/xanderhades/railsgoat/security using the 'dismiss alert' feature. I might voluntarily fail a build if some new findings are found, but only if I have a high degree of confidence that false positives won't disrupt the dev workflow. The current settings were kept simple for this exercise.
