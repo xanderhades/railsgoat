@@ -49,3 +49,12 @@ railsgoat is then available at http://localhost:3000
 
 ### additional notes
 In the real world, I might tune brakeman and zap so only findings with a high degree of confidence are reported. I might also just leave it as-is, and dismiss false positive issues found in https://github.com/xanderhades/railsgoat/security using the 'dismiss alert' feature. I might voluntarily fail a build if some new findings are found, but only if I have a high degree of confidence that false positives won't disrupt the dev workflow. The current settings were kept simple for this exercise.
+
+
+## vulnerability analysis
+
+I analyzed some of the vulnerabilities and created GitHub issues in this repository, as seen here: https://github.com/xanderhades/railsgoat/issues 
+
+I used Burp Suite to generate the CSRF PoC.
+
+I used gifs in the reproduction steps and committed them to this repo, I wouldn't do this in the real world.
