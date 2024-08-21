@@ -20,6 +20,7 @@ jobs:
           path: |
             output.json
             output.html
+            output.sarif
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         if: always()
