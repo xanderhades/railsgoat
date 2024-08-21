@@ -6,7 +6,7 @@ init:
 # Compiles requirements.txt files from dependencies specified in requirements.in
 .PHONY: start
 start:
-	@docker compose up
+	@docker compose up --detach
 
 # Catch-all target which does nothing
 %:

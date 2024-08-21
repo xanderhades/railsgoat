@@ -33,7 +33,7 @@ I added `.github/actions/workflows/daast.yml` to scan the repository with OWASP 
 
 
 ### additional notes
-In the real world, I might tune brakeman so only findings with a high degree of confidence are reported. Or I might just leave it as-is, and dismiss false positive issues found in https://github.com/xanderhades/railsgoat/security using the 'dismiss alert' feature.
+In the real world, I might tune brakeman and zap so only findings with a high degree of confidence are reported. I might also just leave it as-is, and dismiss false positive issues found in https://github.com/xanderhades/railsgoat/security using the 'dismiss alert' feature. I might voluntarily fail a build if some new findings are found, but only if I have a high degree of confidence that false positives won't disrupt the dev workflow. The current settings were kept simple for this exercise.
 
 ## setup railsgoat
 Read `README.md` for instructions to run railsgoat locally. I'll go with the provided docker compose stack.
