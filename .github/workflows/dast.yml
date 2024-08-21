@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  pull_request: # temporarily run on PR as well
 jobs:
   scan:
     runs-on: ubuntu-latest
