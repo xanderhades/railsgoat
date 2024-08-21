@@ -21,6 +21,11 @@ I can then analyze the results from stdout, from brakeman/output.json or from a 
 
 I then added `.github/actions/workflows/sast.yml` to scan the repository on a pull request, and upload the results to github itself, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman
 
+I then merge this PR to see the results on the master branch.
+
+### additional notes
+In the real world, I might tune brakeman so only findings with a high degree of confidence are reported. Or I might just leave it as-is, and dismiss false positive issues found in https://github.com/xanderhades/railsgoat/security using the 'dismiss alert' feature.
+
 ## setup railsgoat
 Read `README.md` for instructions to run railsgoat locally. I'll go with the provided docker compose stack.
 
