@@ -39,4 +39,7 @@ docker compose run web rails db:setup
 docker compose up
 ````
 
+I created a `Makefile` to simplify usage.
+
+`make init && make start`
 railsgoat is then available at http://localhost:3000
