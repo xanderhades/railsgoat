@@ -1,5 +1,5 @@
 # Vulnerability Discovery Techniques
-My approach is documented here, and in the various commits in this PR: https://github.com/xanderhades/railsgoat/pull/1
+My approach is documented here, and in the various commits in these pull requests: https://github.com/xanderhades/railsgoat/pulls?q=is%3Apr
 
 ## tools used
 brakeman, Burp Suite
@@ -21,7 +21,9 @@ I can then analyze the results from stdout, from brakeman/output.json or from a 
 
 I then added `.github/actions/workflows/sast.yml` to scan the repository on a pull request, and upload the results to github itself, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman
 
-I then merge this PR to see the results on the master branch.
+I then merge this PR to see the results on the master branch. 
+
+Of course I forgot to force 'squash merging' so the commit history on master is somewhat polluted, but I hope you will forgive me.
 
 ### additional notes
 In the real world, I might tune brakeman so only findings with a high degree of confidence are reported. Or I might just leave it as-is, and dismiss false positive issues found in https://github.com/xanderhades/railsgoat/security using the 'dismiss alert' feature.
