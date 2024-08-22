@@ -17,11 +17,11 @@ gem install brakeman
 Run brakeman locally and save to a file
 `brakeman --color -o /dev/stdout -o brakeman/output.json -o brakeman/report.html`
 
-I can then analyze the results from stdout, from brakeman/output.json or from a nicer brakeman/report.html file in a web browser
+I can then analyze the results from `stdout`, from `brakeman/output.json` or from a nicer `brakeman/report.html` file in a web browser.
 
-I then added `.github/actions/workflows/sast.yml` to scan the repository on a pull request and on a merge to master, and upload the results to GitHub, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman
+I then added `.github/actions/workflows/sast.yml` to scan the repository on a pull request and on a merge to master, and uploaded the results to GitHub, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman
 
-I then merged this PR to see the results on the master branch. 
+I then merged the first PR to see the results on the master branch. 
 
 Of course I forgot to force 'squash merging' so the commit history on master is somewhat polluted, but I hope you will forgive me. In the real world, I use squash commit and use my PR title as the commit message.
 
@@ -32,7 +32,7 @@ See scanning results here: https://github.com/xanderhades/railsgoat/security/cod
 I added `.github/actions/workflows/daast.yml` to scan the repository with OWASP Zap on a merge to master and upload the results to GitHub, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman%2CZAProxy
 
 ## setup railsgoat
-Read `README.md` for instructions to run railsgoat locally. I'll go with the provided docker compose stack.
+I read `README.md` for instructions to run railsgoat locally. I went go with the provided docker compose stack.
 
 `docker-compose` has been deprecated, on my environment I had to use `docker compose` instead.
 
