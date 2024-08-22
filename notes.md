@@ -23,16 +23,16 @@ I then added `.github/actions/workflows/sast.yml` to scan the repository on a pu
 
 I then merged the first PR to see the results on the master branch. 
 
-Of course I forgot to force 'squash merging' so the commit history on master is somewhat polluted, but I hope you will forgive me. In the real world, I use squash commit and use my PR title as the commit message.
+Of course I forgot to force `squash merging` so the commit history on master is somewhat polluted, but I hope you will forgive me. In the real world, I use squash commit and use my PR title as the commit message.
 
 See scanning results here: https://github.com/xanderhades/railsgoat/security/code-scanning
 
 ## vulnerability discovery - DAST
 
-I added `.github/actions/workflows/daast.yml` to scan the repository with OWASP Zap on a merge to master and upload the results to GitHub, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman%2CZAProxy
+I added `.github/actions/workflows/dast.yml` to scan the repository with OWASP Zap on a merge to master and upload the results to GitHub, as seen here: https://github.com/xanderhades/railsgoat/security/code-scanning?query=pr%3A1+tool%3ABrakeman%2CZAProxy
 
 ## setup railsgoat
-I read `README.md` for instructions to run railsgoat locally. I went go with the provided docker compose stack.
+I read `README.md` for instructions to run railsgoat locally. I went with the provided docker compose stack.
 
 `docker-compose` has been deprecated, on my environment I had to use `docker compose` instead.
 
