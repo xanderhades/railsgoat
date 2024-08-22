@@ -53,7 +53,7 @@ In the real world, I might tune brakeman and zap so only findings with a high de
 
 ## vulnerability analysis
 
-I analyzed some of the vulnerabilities and created GitHub issues in this repository, as seen here: https://github.com/xanderhades/railsgoat/issues 
+I analyzed some of the vulnerabilities found by SAST/DAST and created GitHub issues in this repository, as seen here: https://github.com/xanderhades/railsgoat/issues 
 
 I used Burp Suite to generate the CSRF PoC.
 
